@@ -15,7 +15,7 @@ Program omogućava korisniku unos teksta putem grafičkog korisničkog interfejs
 teksta iz datoteke. Nakon unosa ili učitavanja teksta, koristi se spaCy model za analizu teksta i 
 prepoznavanje imenovanih entiteta.
 Program koristi Tkinter, standardni Python modul za izradu grafičkog korisničkog interfejsa. Tkinter 
-olakšava izradu prozora, gumba i polja za unos teksta kako bi korisnik mogao lako interagovati s 
+olakšava izradu prozora, dugmeta i polja za unos teksta kako bi korisnik mogao lako interagovati s 
 programom.
 
 Kako Koristiti Program:

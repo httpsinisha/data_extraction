@@ -25,4 +25,5 @@ teksta te prikazati identifikovane imenovane entitete i njihove tipove u rezulta
 3. Učitavanje Teksta iz datoteke: Klikom na "Učitaj Tekst iz datoteke" korisnik može odabrati tekstualnu 
 datoteku, a program će učitati njen sadržaj u polje za unos teksta.
 4. Rezultati: Identifikovani imenovani entiteti i njihovi tipovi bit će prikazani u rezultatnom polju.
+   
 Autor: Siniša Jelisavac

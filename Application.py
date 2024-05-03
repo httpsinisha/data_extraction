@@ -2,22 +2,15 @@ import tkinter as tk
 from tkinter import filedialog
 import spacy
 
-# Učitavanje prethodno preuzetog modela jezika
 nlp = spacy.load("hr_core_news_sm")
 
 def analyze_text():
-    # Čitanje teksta iz unosa
     text = text_entry.get("1.0", tk.END)
-
-    # Analiziranje teksta koristeći spaCy
     doc = nlp(text)
-
-    # Ispisivanje imenovanih entiteta u rezultatno polje
     result_text.delete(1.0, tk.END)
     for ent in doc.ents:
         result_text.insert(tk.END, f"Entitet: {ent.text}, Tip: {ent.label_}\n")
 
-# Funkcija za učitavanje teksta iz datoteke
 def load_text_file():
     file_path = filedialog.askopenfilename(title="Odaberi tekstualnu datoteku")
     if file_path:
@@ -25,27 +18,21 @@ def load_text_file():
             text_entry.delete(1.0, tk.END)
             text_entry.insert(tk.END, file.read())
 
-# Glavni prozor
 root = tk.Tk()
 root.title("Imenovana Entitetska Identifikacija")
 
-# Unosno polje za tekst
 text_entry = tk.Text(root, height=10, width=50)
 text_entry.pack(pady=10)
 
-# Dugme za analizu
 analyze_button = tk.Button(root, text="Analiziraj Tekst", command=analyze_text)
 analyze_button.pack(pady=5)
 
-# Dugme za učitavanje teksta iz datoteke
 load_button = tk.Button(root, text="Učitaj Tekst iz Datoteke", command=load_text_file)
 load_button.pack(pady=5)
 
-# Polje za prikaz rezultata
 result_text = tk.Text(root, height=10, width=50)
 result_text.pack(pady=10)
 
-# Pokretanje Tkinter petlje
 root.mainloop()
 
 
@@ -54,17 +41,13 @@ root.mainloop()
 
 """ import spacy
 
-# Učitavanje prethodno preuzetog modela jezika
 nlp = spacy.load("hr_core_news_sm")
 
-# Tekst koji želimo analizirati
 with open("neki_tekst.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
-# Analiziranje teksta koristeći spaCy
 doc = nlp(text)
 
-# Ispisivanje imenovanih entiteta
 for ent in doc.ents:
     print(f"Entitet: {ent.text}, Tip: {ent.label_}")
 
